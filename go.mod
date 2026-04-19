@@ -38,3 +38,5 @@ require (
 // switched jmoiern/sqlx back to upstream jmoiron/sqlx (jmoiern appeared to be a typo)
 // TODO: explore replacing gorilla/mux with net/http ServeMux once Go 1.22 pattern
 //       matching is confirmed stable enough for this project's routing needs
+// NOTE: go-sqlite3 requires CGO_ENABLED=1 at build time; remember to set this
+//       when cross-compiling (e.g. CGO_ENABLED=1 GOOS=linux GOARCH=amd64)
