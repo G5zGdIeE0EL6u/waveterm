@@ -10,7 +10,7 @@ require (
 	github.com/google/uuid v1.6.0
 	github.com/gorilla/mux v1.8.1
 	github.com/gorilla/websocket v1.5.1
-	github.com/jmoiern/sqlx v1.3.5
+	github.com/jmoiron/sqlx v1.3.5
 	github.com/mattn/go-sqlite3 v1.14.22
 	github.com/mitchellh/mapstructure v1.5.0
 	github.com/shirou/gopsutil/v3 v3.24.3
@@ -35,8 +35,4 @@ require (
 )
 
 // personal fork - tracking upstream wavetermdev/waveterm for local experimentation
-// note: jmoiern/sqlx is a fork of jmoiron/sqlx - should verify this is intentional
-//       upstream uses jmoiron/sqlx; switching back to upstream jmoiron/sqlx is
-//       recommended if jmoiern/sqlx diverges or causes compatibility issues.
-// TODO: switch back to jmoiron/sqlx once confirmed safe:
-//   replace github.com/jmoiern/sqlx => github.com/jmoiron/sqlx v1.3.5
+// switched jmoiern/sqlx back to upstream jmoiron/sqlx (jmoiern appeared to be a typo)
