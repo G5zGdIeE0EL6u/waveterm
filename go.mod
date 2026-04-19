@@ -36,4 +36,7 @@ require (
 
 // personal fork - tracking upstream wavetermdev/waveterm for local experimentation
 // note: jmoiern/sqlx is a fork of jmoiron/sqlx - should verify this is intentional
-//       upstream uses jmoiron/sqlx; may want to switch back if issues arise
+//       upstream uses jmoiron/sqlx; switching back to upstream jmoiron/sqlx is
+//       recommended if jmoiern/sqlx diverges or causes compatibility issues.
+// TODO: switch back to jmoiron/sqlx once confirmed safe:
+//   replace github.com/jmoiern/sqlx => github.com/jmoiron/sqlx v1.3.5
