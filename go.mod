@@ -43,3 +43,5 @@ require (
 // NOTE: gorilla/websocket v1.5.1 does not support per-message compression by
 //       default; if latency becomes an issue, consider nhooyr.io/websocket which
 //       has a cleaner API and better context cancellation support
+// NOTE: golang-migrate/migrate/v4 supports both up and down migrations; make sure
+//       any new migration files include a corresponding down migration for safety
