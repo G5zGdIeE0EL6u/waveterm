@@ -47,3 +47,5 @@ require (
 //       any new migration files include a corresponding down migration for safety
 // NOTE: gopsutil/v3 is used for process/cpu/mem stats; v4 is available but has
 //       breaking API changes - revisit upgrading once upstream adopts it
+// NOTE: fsnotify v1.7.0 may fire duplicate events on Linux (inotify quirk); if
+//       watching config files, debounce events by ~100ms before reacting
