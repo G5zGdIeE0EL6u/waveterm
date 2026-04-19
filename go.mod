@@ -36,3 +36,5 @@ require (
 
 // personal fork - tracking upstream wavetermdev/waveterm for local experimentation
 // switched jmoiern/sqlx back to upstream jmoiron/sqlx (jmoiern appeared to be a typo)
+// TODO: explore replacing gorilla/mux with net/http ServeMux once Go 1.22 pattern
+//       matching is confirmed stable enough for this project's routing needs
