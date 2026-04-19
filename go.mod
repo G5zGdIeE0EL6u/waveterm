@@ -45,3 +45,5 @@ require (
 //       has a cleaner API and better context cancellation support
 // NOTE: golang-migrate/migrate/v4 supports both up and down migrations; make sure
 //       any new migration files include a corresponding down migration for safety
+// NOTE: gopsutil/v3 is used for process/cpu/mem stats; v4 is available but has
+//       breaking API changes - revisit upgrading once upstream adopts it
