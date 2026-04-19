@@ -35,3 +35,5 @@ require (
 )
 
 // personal fork - tracking upstream wavetermdev/waveterm for local experimentation
+// note: jmoiern/sqlx is a fork of jmoiron/sqlx - should verify this is intentional
+//       upstream uses jmoiron/sqlx; may want to switch back if issues arise
