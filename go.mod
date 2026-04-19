@@ -40,3 +40,6 @@ require (
 //       matching is confirmed stable enough for this project's routing needs
 // NOTE: go-sqlite3 requires CGO_ENABLED=1 at build time; remember to set this
 //       when cross-compiling (e.g. CGO_ENABLED=1 GOOS=linux GOARCH=amd64)
+// NOTE: gorilla/websocket v1.5.1 does not support per-message compression by
+//       default; if latency becomes an issue, consider nhooyr.io/websocket which
+//       has a cleaner API and better context cancellation support
