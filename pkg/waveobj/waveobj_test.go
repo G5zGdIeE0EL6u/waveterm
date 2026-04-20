@@ -16,9 +16,9 @@ type testObj struct {
 	Name  string `json:"name"`
 }
 
-func (t *testObj) GetOType() string { return "test" }
-func (t *testObj) GetOID() string   { return t.OID }
-func (t *testObj) SetOID(oid string) { t.OID = oid }
+func (t *testObj) GetOType() string    { return "test" }
+func (t *testObj) GetOID() string      { return t.OID }
+func (t *testObj) SetOID(oid string)   { t.OID = oid }
 
 // anotherObj is a second WaveObj implementation for testing multiple registrations.
 type anotherObj struct {
@@ -27,9 +27,9 @@ type anotherObj struct {
 	Value int    `json:"value"`
 }
 
-func (a *anotherObj) GetOType() string     { return "another" }
-func (a *anotherObj) GetOID() string       { return a.OID }
-func (a *anotherObj) SetOID(oid string)    { a.OID = oid }
+func (a *anotherObj) GetOType() string  { return "another" }
+func (a *anotherObj) GetOID() string    { return a.OID }
+func (a *anotherObj) SetOID(oid string) { a.OID = oid }
 
 func TestRegisterType(t *testing.T) {
 	waveobj.RegisterType[*testObj]()
@@ -81,5 +81,20 @@ func TestMakeObjByTypeUnknown(t *testing.T) {
 	_, err := waveobj.MakeObjByType("nonexistent")
 	if err == nil {
 		t.Error("expected error for unknown type, got nil")
+	}
+}
+
+// TestMakeObjByTypeAndSetOID verifies that a newly created object can have its OID set correctly.
+// Added this to ensure SetOID works as expected after MakeObjByType.
+func TestMakeObjByTypeAndSetOID(t *testing.T) {
+	waveobj.RegisterType[*testObj]()
+	obj, err := waveobj.MakeObjByType("test")
+	if err != nil {
+		t.Fatalf("unexpected error: %v", err)
+	}
+	const testOID = "test-oid-1234"
+	obj.SetOID(testOID)
+	if obj.GetOID() != testOID {
+		t.Errorf("expected OID '%s', got '%s'", testOID, obj.GetOID())
 	}
 }
